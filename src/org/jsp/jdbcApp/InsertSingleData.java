@@ -10,16 +10,16 @@ public class InsertSingleData
 	public static void main(String[] args) {
 		Connection con=null;
 		Statement stmt=null;
-		String qry="insert into JdbcPractice.student values (3, 'Abcd',58.80)";
+		String qry="insert into JdbcPractice.student values (6, 'Dheeraj',99.99)";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("Driver class loaded and registered");
+			System.out.println("Driver class loaded and registered"); //1
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306?user=root&password=admin");
-			System.out.println("Connection Establish with Data Base Server");
+			System.out.println("Connection Establish with Data Base Server"); //2
 			stmt=con.createStatement();
-			System.out.println("Platform created");
+			System.out.println("Platform created"); //3
 			stmt.executeUpdate(qry);
-			System.out.println("Record Inserted ");
+			System.out.println("Record Inserted ");//4
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
